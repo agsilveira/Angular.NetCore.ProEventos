@@ -14,13 +14,17 @@ export class EventosComponent implements OnInit {
     this. getEventos();
   }
 
-  public eventos: any ;
+  public eventos: any = [];
+  widthImg = 150;
+  marginImg=2;
+
+  MostrarImagem= true;
 
   public getEventos():void{
-    this.http.get("https://localhost:5001/api/Eventos").subscribe(
-      Response => this.eventos = Response,
-      erro => console.log(erro)
-    );
+   this.http.get("https://localhost:5001/api/Eventos").subscribe(
+     Response => this.eventos = Response,
+     erro => console.log(erro)
+   );
 
   }
 
